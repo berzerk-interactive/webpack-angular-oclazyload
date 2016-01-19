@@ -3,8 +3,30 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>ui-router</title>
+
 </head>
 <body ng-app="myApp">
+  <md-content>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button aria-label="Go Back">
+          Go Back
+        </md-button>
+        <h2>
+          <span>Toolbar with Standard Buttons</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-raised" aria-label="Learn More">
+          Learn More
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+  </md-content>
+
 <p>
     <a ui-sref="page1">Page 1</a>
     <a ui-sref="page2">Page 2</a>
