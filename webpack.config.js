@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var config = {
     entry: {
         app: './app/index.js',
-        vendor: ['angular', 'oclazyload']
+        vendor: ['angular', 'oclazyload', 'angular-aria', 'angular-animate', 'angular-material']
     },
     output: {
         path: './build',
