@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 var config = {
     entry: {
@@ -47,6 +48,10 @@ var config = {
         }),
         new webpack.DefinePlugin({
           ON_DEMO: process.env.NODE_ENV === 'demo'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './app/index.html'
         })
     ]
 };

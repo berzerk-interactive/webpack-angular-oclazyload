@@ -2,10 +2,29 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>ui-router</title>
+    <title>Angular-webpack-oclazyload</title>
 </head>
 <body ng-app="myApp">
+
 <div ng-controller="AppCtrl" layout="column" style="height:500px;" ng-cloak>
+  
+  <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+        </md-button>
+        <h2>
+          <span>Angular + Webpack + Angular-material + angular-moment + oclazyload</span>
+        </h2>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
 <section layout="row" flex>
     <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
       <md-toolbar class="md-theme-indigo">
@@ -15,13 +34,14 @@
         <md-button ng-click="close()" class="md-primary" hide-gt-md>
           Close Sidenav Left
         </md-button>
-        <ul>
-            <li><a ui-sref="page1">Page 1</a></li>
-            <li><a ui-sref="page2">Page 2</a></li>
-            <li><a ui-sref="page3">Page 3</a></li>
-            <li><a ui-sref="page4">Page 4</a></li>
+        <md-subheader class="md-no-sticky">Navigation</md-subheader>
 
-        </ul>
+
+            <md-list-item ui-sref="page1">Page 1</md-list-item>
+            <md-list-item ui-sref="page2">Page 2</md-list-item>
+            <md-list-item ui-sref="page3">Page 3</md-list-item>
+            <md-list-item ui-sref="page4">Page 4</md-list-item>
+
         <p hide-md show-gt-md>
           This sidenav is locked open on your device. To go back to the default behavior,
           narrow your display.

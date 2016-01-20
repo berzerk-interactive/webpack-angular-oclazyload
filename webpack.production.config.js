@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var ngAnnotatePlugin = require('ng-annotate-webpack-plugin');
-
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var config = {
     entry: {
         app: './app/index.js',
@@ -56,6 +56,10 @@ var config = {
         }),
          new webpack.DefinePlugin({
           ON_DEMO: process.env.NODE_ENV === 'demo'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './app/index.html'
         })
     ]
 };
