@@ -1,7 +1,11 @@
 
 <div id="page4">
   <h1>page 4</h1>
-  <h2>{{test.title}}</h2>
+  <h2>{{test.title}} </h2>
+  <h3>It's {{test.today | amDateFormat:'dddd, MMMM Do YYYY, h:mm:ss a' }} thanks moment!</h3>
+  <p>
+    This page is separate module and its template, controller, css, and the <a href="https://www.npmjs.com/package/angular-moment" target="_blank">angular-moment</a> module are bundled and sent with <a href="https://www.npmjs.com/package/oclazyload" target="_blank">oclazyload</a>
+  </p>
   <ul>
       <li ng-repeat="pet in test.pets">{{pet.name}}</li>
   </ul>
