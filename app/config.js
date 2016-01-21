@@ -26,12 +26,12 @@ export default (ngModule, Angular) => {
             controllerAs: 'test'
         });
     }])
-    .controller('AppCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+    .controller('AppCtrl', ['$scope', '$timeout', '$mdSidenav', '$log', function ($scope, $timeout, $mdSidenav, $log) {
       $scope.toggleLeft = buildDelayedToggler('left');
-    $scope.toggleRight = buildToggler('right');
-    $scope.isOpenRight = function(){
-      return $mdSidenav('right').isOpen();
-    };
+      $scope.toggleRight = buildToggler('right');
+      $scope.isOpenRight = function(){
+        return $mdSidenav('right').isOpen();
+      };
     /**
      * Supplies a function that will continue to operate until the
      * time is up.
@@ -70,23 +70,23 @@ export default (ngModule, Angular) => {
           });
       }
     }
-  })
-  .controller('LeftCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+  }])
+  .controller('LeftCtrl', ['$scope', '$timeout', '$mdSidenav', '$log', function ($scope, $timeout, $mdSidenav, $log) {
     $scope.close = function () {
       $mdSidenav('left').close()
         .then(function () {
           $log.debug("close LEFT is done");
         });
     };
-  })
-  .controller('RightCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+  }])
+  .controller('RightCtrl', ['$scope', '$timeout', '$mdSidenav', '$log', function ($scope, $timeout, $mdSidenav, $log) {
     $scope.close = function () {
       $mdSidenav('right').close()
         .then(function () {
           $log.debug("close RIGHT is done");
         });
     };
-  });
+  }]);
         if(ON_DEMO){
             ngModule.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
                 $stateProvider.state('page4', {
