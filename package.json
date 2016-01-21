@@ -19,6 +19,7 @@
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
     "html-loader": "^0.4.0",
+    "html-webpack-plugin": "^1.7.0",
     "ng-annotate-webpack-plugin": "^0.1.2",
     "node-sass": "^3.4.2",
     "raw-loader": "^0.5.1",
@@ -30,7 +31,12 @@
   },
   "dependencies": {
     "angular": "^1.4.8",
+    "angular-animate": "^1.4.8",
+    "angular-aria": "^1.4.8",
+    "angular-material": "^1.0.2",
+    "angular-moment": "^ 1.0.0-beta.3",
     "angular-ui-router": "0.2.15",
-    "oclazyload": "^1.0.9"
+    "oclazyload": "^1.0.9",
+    "svg-inline-loader": "^0.4.0"
   }
 }

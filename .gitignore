@@ -1,5 +1,5 @@
 node_modules
-dist/
-build/
+dist/*.js
+build/*.js
 .DS_store
 *.log
