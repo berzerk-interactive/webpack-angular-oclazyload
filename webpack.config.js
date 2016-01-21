@@ -1,14 +1,20 @@
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path'),
+    webpack = require("webpack"),
+    libPath = path.join(__dirname, 'app'),
+    wwwPath = path.join(__dirname, 'build'),
+    pkg = require('./package.json'),
+    HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 var config = {
     entry: {
-        app: './app/index.js',
+        app: path.join(libPath, 'index.js'),
         vendor: ['angular', 'oclazyload', 'angular-aria', 'angular-animate', 'angular-material']
     },
     output: {
-        path: './build',
+        path: path.join(wwwPath),
         filename: 'bundle.js'
+        // filename: 'bundle-[hash:6].js'
     },
     module: {
         loaders: [
@@ -41,7 +47,6 @@ var config = {
     },
 
     plugins: [
-        new webpack.optimize.DedupePlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             filename: 'vendor.bundle.js'
@@ -49,10 +54,21 @@ var config = {
         new webpack.DefinePlugin({
           ON_DEMO: process.env.NODE_ENV === 'demo'
         }),
+        // HtmlWebpackPlugin: Simplifies creation of HTML files to serve your webpack bundles : https://www.npmjs.com/package/html-webpack-plugin
         new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: './app/index.html'
-        })
+            // filename: 'index.html',
+            // template: './app/index.html',
+            // pkg: pkg,
+            template: path.join(libPath, 'index.html'),
+            hash: true,
+            title: 'title'
+
+        }),
+        // OccurenceOrderPlugin: Assign the module and chunk ids by occurrence count. : https://webpack.github.io/docs/list-of-plugins.html#occurenceorderplugin
+        new webpack.optimize.OccurenceOrderPlugin(),
+
+        // Deduplication: find duplicate dependencies & prevents duplicate inclusion : https://github.com/webpack/docs/wiki/optimization#deduplication
+        new webpack.optimize.DedupePlugin()
     ]
 };
 

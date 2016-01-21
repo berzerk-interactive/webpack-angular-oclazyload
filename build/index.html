@@ -2,16 +2,17 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Angular-webpack-oclazyload</title>
+    <title>webpack</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body ng-app="myApp">
 
 <div ng-controller="AppCtrl" layout="column" style="height:500px;" ng-cloak>
-  
+
   <md-toolbar>
       <div class="md-toolbar-tools">
         <md-button class="md-icon-button" aria-label="Settings">
-          <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+          <md-icon md-font-set="material-icons" ng-click="toggleLeft()">menu</md-icon>
         </md-button>
         <h2>
           <span>Angular + Webpack + Angular-material + angular-moment + oclazyload</span>
@@ -21,7 +22,7 @@
           <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
         </md-button>
         <md-button class="md-icon-button" aria-label="More">
-          <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+          <md-icon md-font-set="material-icons" ng-click="toggleRight()">face</md-icon>
         </md-button>
       </div>
     </md-toolbar>
@@ -80,11 +81,20 @@
       <md-content ng-controller="RightCtrl" layout-padding>
         <form>
           <md-input-container>
-            <label for="testInput">Test input</label>
+            <label for="testInput">User Name</label>
             <input type="text" id="testInput"
                    ng-model="data" md-autofocus>
           </md-input-container>
+          <md-input-container>
+            <label for="testInput">Password</label>
+            <input type="text" id="testInput"
+                   ng-model="data" >
+          </md-input-container>
         </form>
+
+        <md-button ng-click="close()" class="md-primary">
+          Login
+        </md-button>
         <md-button ng-click="close()" class="md-primary">
           Close Sidenav Right
         </md-button>
@@ -93,7 +103,5 @@
   </section>
 </div>
 
-<script src="vendor.bundle.js"></script>
-<script src="bundle.js"></script>
-</body>
+<script src="vendor.bundle.js?832c62c4a95bc247e0ec"></script><script src="bundle.js?832c62c4a95bc247e0ec"></script></body>
 </html>
