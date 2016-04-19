@@ -1,6 +1,4 @@
-const page4Conf = angular.module('myApp').config(conf2);
-
-const conf2 = function ($stateProvider, $locationProvider, $urlRouterProvider) {
+let page4Conf = function ($stateProvider, $locationProvider, $urlRouterProvider) {
       $stateProvider.state('page4', {
           url: '/page4',
           templateProvider: ['$q', function ($q) {
@@ -29,7 +27,4 @@ const conf2 = function ($stateProvider, $locationProvider, $urlRouterProvider) {
           }
       });
   };
-
-
-
 export default page4Conf;

@@ -1,12 +1,9 @@
-const Angular = require('angular');
 import 'angular';
-require('oclazyload');
-require('angular-aria');
-require('angular-animate');
-require('angular-material');
-require('./page3/page3Module');
-//require('./page4Module')(Angular);
-// require('./module5/index')(Angular);
+import 'oclazyload';
+import 'angular-aria';
+import 'angular-animate';
+import 'angular-material';
+import './page3/page3Module';
 
 require('style!css!sass!../node_modules/angular-material/angular-material.scss')
 require('./styles/main.scss')
@@ -77,10 +74,10 @@ angular.module('myApp', [require('angular-ui-router'), 'oc.lazyLoad', 'page3App'
         });
     };
     }]);
-    // import page4Conf from './page4/page4.config';
 
 
 if(ON_DEMO){
-  require('./page4/page4.config');
-  // angular.module('myApp').config(page4Conf);
+  angular.module('myApp').config(
+    require('./page4/page4.config').default
+  );
 }
