@@ -1,9 +1,4 @@
-import 'angular';
-import 'oclazyload';
-import 'angular-aria';
-import 'angular-animate';
-import 'angular-material';
-import './page3/page3Module';
+ import './page3/page3Module';
 
 require('style!css!sass!../node_modules/angular-material/angular-material.scss')
 require('./styles/main.scss')
@@ -11,7 +6,7 @@ require('./styles/main.scss')
 
 import config from './config';
 
-angular.module('myApp', [require('angular-ui-router'), 'oc.lazyLoad', 'page3App', 'ngMaterial'])
+angular.module('myApp', ['ui.router', 'oc.lazyLoad', 'page3App', 'ngMaterial'])
     .config(config)
     .controller('AppCtrl', ['$scope', '$timeout', '$mdSidenav', '$log', function ($scope, $timeout, $mdSidenav, $log) {
       $scope.toggleLeft = buildDelayedToggler('left');

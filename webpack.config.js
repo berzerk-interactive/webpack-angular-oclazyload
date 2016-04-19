@@ -9,13 +9,14 @@ var path = require('path'),
 var config = {
     entry: {
         app: path.join(libPath, 'index.js'),
-        vendor: ['angular', 'oclazyload', 'angular-aria', 'angular-animate', 'angular-material']
+        vendor: ['angular', 'oclazyload', 'angular-aria', 'angular-animate', 'angular-material','angular-ui-router']
     },
     output: {
         path: path.join(wwwPath),
         filename: 'bundle.js'
         // filename: 'bundle-[hash:6].js'
     },
+    devtool: 'source-map',
     module: {
         loaders: [
             {
