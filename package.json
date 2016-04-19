@@ -39,5 +39,9 @@
     "angular-ui-router": "0.2.15",
     "oclazyload": "^1.0.9",
     "svg-inline-loader": "^0.4.0"
+  },
+  "engines": {
+    "node": ">=5.0.0 <6.0.0",
+    "npm": ">=3.1 <4.0.0"
   }
 }
