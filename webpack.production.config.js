@@ -4,7 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var config = {
     entry: {
         app: './app/index.js',
-        vendor: ['angular', 'oclazyload']
+        vendor: ['angular', 'oclazyload', 'angular-aria', 'angular-animate', 'angular-material']
     },
     output: {
         path: './dist',
@@ -44,6 +44,9 @@ var config = {
         // new ngAnnotatePlugin({
         //    add: true
         // }),
+        new webpack.DefinePlugin({
+          ON_DEMO: process.env.NODE_ENV === 'demo'
+        }),
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
