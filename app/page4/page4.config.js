@@ -1,6 +1,6 @@
-export default (ngModule, Angular) => {
+const page4Conf = angular.module('myApp').config(conf2);
 
-  ngModule.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
+const conf2 = function ($stateProvider, $locationProvider, $urlRouterProvider) {
       $stateProvider.state('page4', {
           url: '/page4',
           templateProvider: ['$q', function ($q) {
@@ -17,7 +17,7 @@ export default (ngModule, Angular) => {
               foo: ['$q', '$ocLazyLoad', function ($q, $ocLazyLoad) {
                   let deferred = $q.defer();
                   require.ensure([], function () {
-                      let module = require('./page4Module.js')(Angular);
+                      let module = require('./page4Module.js');
                       $ocLazyLoad.load({
                           name: 'page4App'
                       });
@@ -28,6 +28,8 @@ export default (ngModule, Angular) => {
               }]
           }
       });
-  }]);
+  };
 
-}
+
+
+export default page4Conf;

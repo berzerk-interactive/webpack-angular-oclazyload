@@ -1,5 +1,7 @@
-export default Angular => {
-    const ngPage3Module = Angular.module('page3App', []);
+import page3Controller from './page3Controller';
+
+const ngPage3Module = angular.module('page3App', [])
+    .controller('Page3Controller', page3Controller);
     require('./page3.scss');
-    require('./page3Controller')(ngPage3Module);
-}
+
+export default ngPage3Module;

@@ -1,6 +1,8 @@
-export default Angular => {
-    const ngPage4Module = Angular.module('page4App', ['angularMoment']);
-    require('angular-moment');
-    require('./page4.scss');
-    require('./page4Controller')(ngPage4Module);
-}
+
+import page4Controller from './page4Controller';
+import 'angular-moment';
+require('./page4.scss');
+
+const ngPage4Module = angular.module('page4App', ['angularMoment'])
+  .controller('Page4Controller', page4Controller);
+export default ngPage4Module;
