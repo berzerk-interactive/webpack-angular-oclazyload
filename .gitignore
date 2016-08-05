@@ -1,5 +1,7 @@
 node_modules
 dist/*.js
+dist/*.map
 build/*.js
+build/*.map
 .DS_store
 *.log

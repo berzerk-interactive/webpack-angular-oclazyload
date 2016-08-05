@@ -10,6 +10,4 @@ let page3Controller = function(){
     ];
 };
 
-export default ngModule => {
-    ngModule.controller('Page3Controller', page3Controller);
-}
+export default page3Controller;

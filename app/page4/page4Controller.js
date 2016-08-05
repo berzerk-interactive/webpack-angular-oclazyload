@@ -10,6 +10,5 @@ let page4Controller = function(){
     ];
 };
 
-export default ngModule => {
-    ngModule.controller('Page4Controller', page4Controller);
-}
+
+export default page4Controller ;
