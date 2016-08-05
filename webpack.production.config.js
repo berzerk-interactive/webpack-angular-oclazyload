@@ -48,16 +48,16 @@ var config = {
         new webpack.DefinePlugin({
           ON_DEMO: process.env.NODE_ENV === 'demo'
         }),
+        // Deduplication: find duplicate dependencies & prevents duplicate inclusion : https://github.com/webpack/docs/wiki/optimization#deduplication
         new webpack.optimize.DedupePlugin(),
+        // OccurenceOrderPlugin: Assign the module and chunk ids by occurrence count. : https://webpack.github.io/docs/list-of-plugins.html#occurenceorderplugin
+        new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             filename: 'vendor.bundle.js'
         }),
         new webpack.optimize.UglifyJsPlugin({
             mangle:  false
-        }),
-         new webpack.DefinePlugin({
-          ON_DEMO: process.env.NODE_ENV === 'demo'
         }),
         new HtmlWebpackPlugin({
             filename: 'index.html',

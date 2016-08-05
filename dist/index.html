@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
+  <title>Webpack ng oc.lazyload demo</title>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 </head>
 <body ng-app="myApp">
 
@@ -52,7 +53,7 @@
       <div layout="column" layout-fill layout-align="top center">
         <ui-view></ui-view>
         <p>
-        The left sidenav will 'lock open' on a medium (>=960px wide) device.
+        The left sidenav will 'lock open' on a medium ( > =960px wide) device.
         </p>
         <p>
         The right sidenav will focus on a specific child element.
@@ -82,11 +83,11 @@
           <md-input-container>
             <label for="testInput">User Name</label>
             <input type="text" id="testInput"
-                   ng-model="data" md-autofocus>
+                   ng-model="data" md-autofocus />
           </md-input-container>
           <md-input-container>
-            <label for="testInput">Password</label>
-            <input type="text" id="testInput"
+            <label for="testInput2">Password</label>
+            <input type="text" id="testInput2"
                    ng-model="data" >
           </md-input-container>
         </form>
@@ -102,5 +103,5 @@
   </section>
 </div>
 
-<script src="vendor.bundle.js"></script><script src="bundle.js"></script></body>
+<script type="text/javascript" src="vendor.bundle.js"></script><script type="text/javascript" src="bundle.js"></script></body>
 </html>
