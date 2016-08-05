@@ -14,7 +14,7 @@ var config = {
     },
     output: {
         path: path.join(wwwPath),
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
         // filename: 'bundle-[hash:6].js'
     },
     // for devtools options:
@@ -28,26 +28,31 @@ var config = {
 
     module: {
         loaders: [
+            //run all js thru babel
             {
                 test: /\.js$/,
                 loader: 'babel',
                 exclude: /node_modules/
             },
+            //load all css into a js bundle which you can require
             {
                 test: /\.css$/,
                 loader: 'style!css',
                 exclude: /node_modules/
             },
+            //run all sass thru loader, then css loader, then into js bundle
             {
                 test: /\.scss$/,
                 loader: 'style!css!sass',
                 exclude: /node_modules/
             },
+            //load images thru loader and either produce data url or url https://github.com/webpack/url-loader
             {
                 test: /\.(png|jpg)$/,
                 loader: 'url?limit=25000',
                 exclude: /node_modules/
             },
+            // https://github.com/webpack/raw-loader
             {
                 test: /\.html$/,
                 loader: 'raw',

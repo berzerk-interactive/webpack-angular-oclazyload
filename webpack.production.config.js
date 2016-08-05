@@ -8,7 +8,7 @@ var config = {
     },
     output: {
         path: './dist',
-        filename: 'bundle.js'
+        filename: '[name].bundle.js'
     },
     devtool: 'source-map',
     module: {
@@ -57,7 +57,12 @@ var config = {
             filename: 'vendor.bundle.js'
         }),
         new webpack.optimize.UglifyJsPlugin({
-            mangle:  false
+            //mangle is enabled by default
+            mangle:  false,
+            //supresses silly uglify warnings
+            compress: {
+                warnings: false
+            }
         }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
